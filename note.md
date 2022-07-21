@@ -197,3 +197,45 @@ unmask xyz 为减掉的权限
 - whereis(由一些特定目录中查找文件)
 - locate/ updatedb
 - find
+
+# chapter 7 Linux 磁盘与文件系统管理
+
+# chapter 8 文件与文件系统的压缩
+
+## 8.2 Linux 系统常见的压缩命令
+
+### 8.2.1 gzip,zcat/zmore/zless/zgrep
+`gzip [-cdtv#] filename`
+`zcat filename.gz`
+
+### 8.2.2 bzip2,bzcat/bzmore/bzless/bzgrep
+`bzip2 [-cdkzv#] filename`
+`bzcat filename.bz2`
+
+### 8.2.3 xz,xzcat/xzmore/xzless/xzgrep
+`xz [-dtlkc#] filename`
+`xcat filename.xz`
+
+## 8.3 打包命令 tar
+- 压缩 `tar -Jcv -f filename.tar.xz`
+- 查询 `tar -Jtv -f filename.tar.xz`
+- 解压缩 `tar -Jxv -f filename.tar.xz`
+- -z gzip
+- -j bzip2
+- -J xz
+
+## 8.4 XFS文件系统的备份与还原
+
+### 8.4.1 xfsdump
+
+## 8.6 其他压缩与备份工具
+
+### 8.6.1 dd
+
+`dd if = "input_file" of = "output_file" bs = "block_size" count="number"`
+
+### 8.6.2 cpio
+
+备份 `find / | cpio -ocvB > /dev/st0`
+
+还原 `cpio -idvc < /dev/st0`
